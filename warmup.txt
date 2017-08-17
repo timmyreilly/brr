@@ -5,7 +5,7 @@
 npm install ethereumjs-testrpc
 npm install web3@0.20.1 
 
-node_modules\bin\testrpc 
+node_modules\.bin\testrpc 
 // will start testrpc and you can connect using warmup2 
 
 // RUNNING RINKE
