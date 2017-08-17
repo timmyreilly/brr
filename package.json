@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "azure-iothub": "^1.1.14",
+    "dotenv": "^4.0.0",
     "ethereumjs-testrpc": "^4.0.1",
     "solc": "^0.4.15",
     "web3": "^0.20.1"
