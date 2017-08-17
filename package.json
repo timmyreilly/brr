@@ -9,6 +9,7 @@
   "author": "timmyreilly",
   "license": "ISC",
   "dependencies": {
+    "azure-event-hubs": "0.0.8",
     "azure-iothub": "^1.1.14",
     "dotenv": "^4.0.0",
     "ethereumjs-testrpc": "^4.0.1",
