@@ -7,6 +7,10 @@ console.log("Hub Connection String: " + process.env.IOT_CONNECTION_STRING);
 
 var connectionString = process.env.IOT_CONNECTION_STRING;
 
+// Configure web3
+web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+
+
 var printError = function (err) {
     console.log(err.message);
 };
