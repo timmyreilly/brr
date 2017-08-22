@@ -6,6 +6,7 @@ abi = JSON.parse('[{"constant":true,"inputs":[{"name":"","type":"bytes32"}],"nam
 StoringContract = web3.eth.contract(abi); 
 contractInstance = StoringContract.at('0xf408b4c19ce4da8c88a060369e5acc69ad56df96');
 spots = {"one":"firstSpot", "two":"secondSpot","three":"thirdSpot"};
+spotsEnum = ['one', 'two', 'three']; 
 
 // what's your account address? 
 console.log(acc = web3.eth.accounts[0]); 
@@ -37,20 +38,43 @@ function GetSpotOccupancy(spotID){
     return x; 
 }
 
-function adjustAccordingly(spotID){
+function adjustAccordingly(spotID, spots, spotsEnum){
 
-    console.log("Welcome"); 
+    console.log("Welcome");
+    var choice = 'c'; 
+    
+    while(choice != 'q'){
+        if (choice == 'p'){
+            // place holder, should make switch statement 
+
+            console.log("lets listen in"); 
+        }else if (choice == "c"){
+            // if they user wants to list the occupancy of all parking meters
+
+            for (var i= 0; i <= 2; i++){
+                // console.log(spots); 
+                console.log(spots[spotsEnum[i]]);
+                
+                console.log(spots[])
+            }
+        } else if(choice == 'one'){
+            // user wants to change the occupany of a parking spot - in this case 'one'
+        }
+    }
     // first we check if the spot is occupied; 
     x = GetSpotOccupancy(spotID);
     
     // then we set it to whatever its not. 
     if(x == 1){
-        
+
         console.log("Spot is occupied"); 
+    }
+    else {
+        console.log("Spot is unoccupied"); 
     }
 }
 
-adjustAccordingly('one'); 
+adjustAccordingly('two', spots, spotsEnum); 
 
 
 // function voteForCandidate() {
