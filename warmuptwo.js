@@ -40,3 +40,16 @@ contractInstance = StoringContract.at(deployedContract.address);
 contractInstance.markAsOccupied('one', {from:web3.eth.accounts[0]});
 contractInstance.markAsOccupied('two', {from:web3.eth.accounts[0]});
 idOne = contractInstance.spotOccupancy.call('one'); 
+
+// another one 
+
+Web3 = require('web3');
+web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+web3.eth.accounts;
+code = fs.readFileSync('testContract.sol').toString();
+solc = require('solc'); 
+compiledCode = solc.compile(code); 
+abiDefinition = JSON.parse(compiledCode.contract[':testContract'].interface);
+testContract = web3.eth.contract(abiDefinition); 
+byteCode = compiledCode.contract['testContract'].bytecode;  
+deployedContract = StoringContract.new([], {data: byteCode, from: web3.eth.accounts[0], gas: 470000});
